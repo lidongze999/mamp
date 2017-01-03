@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="shortcut icon" href="favicon.ico" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/MyLookBook.css" />
+		<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-default " role="navigation" id="navbar">
+			<div class="row">
+				<div class="container col-xs-12">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+						<a class="navbar-brand" href="#"><img src="img/logo.png" class="img-responsive" id="logo" alt="" /></a>
+					</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li class="active">
+								<a href="#">首页</a>
+							</li>
+							<li>
+								<a href="#">文章</a>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">发现<span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+									<li>
+										<a href="#">风格</a>
+									</li>
+									<li>
+										<a href="#">类别</a>
+									</li>
+									<li>
+										<a href="">品牌</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="#">热点文章</a>
+									</li>
+									<li>
+										<a href="#">热门用户</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<div id="login">
+							<ul class="nav navbar-nav navbar-right">
+								<li>
+									<button type="button" class="btn btn-default btn-login" data-toggle="modal" data-target="#myModal">登录</button>
+								</li>
+								<li>
+									<button type="button" class="btn btn-default btn-singup" data-toggle="modal" data-target="#myModal1">注册</button>
+								</li>
+							</ul>
+						</div>
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+										<h2 class="modal-title" id="myModalLabel">登录</h2>
+									</div>
+									<div class="modal-body">
+										<form action="" role="form" method="post">
+											<div class="form-group">
+												<label for="exampleInputEmail1">邮箱：</label>
+												<input type="email" class="form-control" placeholder="请输入您的邮箱" />
+											</div>
+											<div class="form-group">
+												<label for="exampleInpuPassword1">密码：</label>
+												<input type="password" class="form-control" placeholder="请输入您的密码" />
+											</div>
+										</form>
+									</div>
+									<div class="modal-footer">
+										<button type="submit" class="btn btn-default" data-dismiss="modal">登录</button>
+										<button type="submit" class="btn btn-primary">注册</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+										<h2 class="modal-title" id="myModalLabel1">注册</h2>
+									</div>
+									<div class="modal-body">
+										<form action="" role="form" method="post">
+											<div class="form-group">
+												<label for="exampleInputEmalil2">账号：</label>
+												<input type="email" class="form-control" placeholder="请输入您的邮箱" />
+											</div>
+											<div class="form-group">
+												<label for="exampleInputPassword2">密码：</label>
+												<input type="password" class="form-control" placeholder="6~16个字符，区分大小写" />
+											</div>
+											<div class="form-group">
+												<label for="exampleInputPassword3">确认密码：</label>
+												<input type="password" class="form-control" placeholder="请再次填写密码" />
+											</div>
+										</form>
+									</div>
+									<div class="modal-footer">
+										<button type="submit" class="btn btn-default" data-dismiss="modal">注册</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<form class="navbar-form navbar-right" role="search" action="">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Search" class="input-group input-group-lg">
+							</div>
+							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+						</form>
+					</div>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+			</div>
+		</nav>
+	</body>
+</html>

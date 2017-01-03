@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>MyLookBook</title>
+		<link rel="shortcut icon" href="favicon.ico" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/MyLookBook.css" />
+		<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/my.js"></script>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-default " role="navigation" id="navbar">
+			<div class="row">
+				<div class="container col-xs-12">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+						<a class="navbar-brand" href="#"><img src="img/logo.png" class="img-responsive" id="logo" alt="" /></a>
+					</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li class="active">
+								<a href="#">首页</a>
+							</li>
+							<li>
+								<a href="#">文章</a>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">发现<span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+									<li>
+										<a href="#">风格</a>
+									</li>
+									<li>
+										<a href="#">类别</a>
+									</li>
+									<li>
+										<a href="">品牌</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="#">热点文章</a>
+									</li>
+									<li>
+										<a href="#">热门用户</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<div id="login">
+							<ul class="nav navbar-nav navbar-right">
+								<li>
+									<button type="button" class="btn btn-default btn-login" data-toggle="modal" data-target="#myModal">登录</button>
+								</li>
+								<li>
+									<button type="button" class="btn btn-default btn-singup" data-toggle="modal" data-target="#myModal1">注册</button>
+								</li>
+							</ul>
+						</div>
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+										<h2 class="modal-title" id="myModalLabel">登录</h2>
+									</div>
+									<div class="modal-body">
+										<form action="" role="form" method="post">
+											<div class="form-group">
+												<label for="exampleInputEmail1">邮箱：</label>
+												<input type="email" class="form-control" placeholder="请输入您的邮箱" />
+											</div>
+											<div class="form-group">
+												<label for="exampleInpuPassword1">密码：</label>
+												<input type="password" class="form-control" placeholder="请输入您的密码" />
+											</div>
+										</form>
+									</div>
+									<div class="modal-footer">
+										<button type="submit" class="btn btn-default" data-dismiss="modal">登录</button>
+										<button type="submit" class="btn btn-primary">注册</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+										<h2 class="modal-title" id="myModalLabel1">注册</h2>
+									</div>
+									<div class="modal-body">
+										<form action="reg.php" role="form" method="post" onSubmit="return InputCheck(this)">
+											<div class="form-group">
+												<label for="exampleInputEmalil2">用户名：</label>
+												<input type="text" id="username" name="username" class="form-control input" placeholder="请输入您的用户名" />
+												<span>(必填，3-15字符长度，支持汉字、字母、数字及_)</span>
+											</div>
+											<div class="form-group">
+												<label for="exampleInputPassword2">密码：</label>
+												<input type="password" id="password" name="password" class="form-control input" placeholder="6~16个字符，区分大小写" />
+												<span>(必填，不得少于6位)</span>
+											</div>
+											<div class="form-group">
+												<label for="exampleInputPassword3">确认密码：</label>
+												<input type="password" id="repass" name="repass" class="form-control input" placeholder="请再次填写密码" />
+											</div>
+											<div class="form-group">
+												<label for="email">电子邮箱</label>
+												<input type="email" id="email" name="email" class="form-control input" placeholder="请输入您的邮箱" />
+											</div>
+											<input type="submit" name="submit" value="  提交注册  " class="left" />
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+						<form class="navbar-form navbar-right" role="search" action="">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Search" class="input-group input-group-lg">
+							</div>
+							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+						</form>
+					</div>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+			</div>
+		</nav>
+		<section>
+			<div class="row">
+				<div class="col-sm-12 photo-container">
+					<img src="img/cover-img.jpg" class="img-responsive" alt="" />
+					<div class="darkness"></div>
+				</div>
+			</div>
+		</section>
+		<section class="main">
+			<div class="container">
+				<div class="share">
+					<div class="row">
+						<div class="col-sm-7"></div>
+						<div class="col-sm-5">
+							<div class="follow-prompt">
+								Find Lookbook on
+							</div>
+							<div class="social-buttons">
+								<a href="#" target="_blank">
+									<span class="glyphicon glyphicon-camera"></span>
+								</a>
+								<a href="#" target="_blank">
+									<span class="glyphicon glyphicon-envelope"></span>
+								</a>
+								<a href="#" target="_blank">
+									<span class="glyphicon glyphicon-film"></span>
+								</a>
+								<a href="#" target="_blank">
+									<span class="glyphicon glyphicon-music"></span>
+								</a>
+								<a href="#" target="_blank">
+									<span class="glyphicon glyphicon-book"></span>
+								</a>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8 col-xs-12 main-left">
+						<p class="main-p">
+							<strong></strong>HYPE</em> the looks you like, and <b>+FAN</b> the people you like to personalize your feed.
+						</p>
+						<h2 class="section-title">
+           					Hot looks, by diversity
+        					</h2>
+						<div id="filters">
+							<div class="dropdown main-dropdown">
+								<button class="btn btn-default dropdown-toggle filters-btn" type="button" id="dropdownMenu1" data-toggle="dropdown">
+							    Global
+							    <span class="caret"></span>
+							  </button>
+								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#">Action</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#">Another action</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#">Something else here</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#">Separated link</a>
+									</li>
+								</ul>
+							</div>
+							<div class="dropdown main-dropdown">
+								<button class="btn btn-default dropdown-toggle filters-btn" type="button" id="dropdownMenu1" data-toggle="dropdown">
+							    Global
+							    <span class="caret"></span>
+							  </button>
+								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#">Action</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#">Another action</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#">Something else here</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#">Separated link</a>
+									</li>
+								</ul>
+							</div>
+							<div class="dropdown main-dropdown right">
+								<button class="btn btn-default dropdown-toggle filters-btn" type="button" id="dropdownMenu1" data-toggle="dropdown">
+							    两性
+							    <span class="caret"></span>
+							  </button>
+								<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#">Action</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#">Another action</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#">Something else here</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#">Separated link</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="look">
+							<div class="user-meta">
+								<div class="user">
+									<div class="avatar">
+
+									</div>
+									<div class="info">
+										<a href="#"><img src="img/touxiang.jpg" class="img-circle img-responsive" /></a>
+									</div>
+								</div>
+							</div>
+							<div class="look-meta">
+								<div class="main-row">
+									<div class="name">
+										<a href="#" target="_blank">Exality B.</a>
+										<button class="btn btn-default bw-btn fan-btn">
+										+Fan
+										</button>
+									</div>
+
+								</div>
+
+								<div class="byline">
+									blogger on masha-sedgwick.com 来自
+								</div>
+							</div>
+							<div class="look-msg">
+								<a href="#">Berlin, Alexanderplatz</a>
+								<div class="look-comment">
+									3 <span class="glyphicon glyphicon-edit"></span>
+								</div>
+								<div class="look-ago">
+									<span class="sep">·</span> 9 hours ago
+								</div>
+							</div>
+							<div class="look-photo">
+								<a href="#" target="_blank">
+									<img src="img/look.jpg" class="img-responsive" alt="" />
+								</a>
+							</div>
+							<div class="look-actions">
+								<div class="hype">
+									<button class="btn btn-default bw-btn hype-btn">HYPE</button>
+									<div class="hype-count">190</div>
+								</div>
+								<div class="save">
+									<button class="btn btn-default">Save</button>
+								</div>
+								<ul>
+									<li>
+										<a href=""><span class="glyphicon glyphicon-refresh"></span></a>
+									</li>
+									<li>
+										<a href=""><span class="glyphicon glyphicon-refresh"></span></a>
+									</li>
+									<li>
+										<a href=""><span class="glyphicon glyphicon-refresh"></span></a>
+									</li>
+									<li>
+										<a href=""><span class="glyphicon glyphicon-refresh"></span></a>
+									</li>
+									<li>
+										<a href=""><span class="glyphicon glyphicon-refresh"></span></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="look">
+							<div class="user-meta">
+								<div class="user">
+									<div class="avatar">
+
+									</div>
+									<div class="info">
+										<a href="#"><img src="img/touxiang.jpg" class="img-circle img-responsive" /></a>
+									</div>
+								</div>
+							</div>
+							<div class="look-meta">
+								<div class="main-row">
+									<div class="name">
+										<a href="#" target="_blank">Exality B.</a>
+										<button class="btn btn-default bw-btn fan-btn">
+										+Fan
+										</button>
+									</div>
+
+								</div>
+
+								<div class="byline">
+									blogger on masha-sedgwick.com 来自
+								</div>
+							</div>
+							<div class="look-msg">
+								<a href="#">Berlin, Alexanderplatz</a>
+								<div class="look-comment">
+									3 <span class="glyphicon glyphicon-edit"></span>
+								</div>
+								<div class="look-ago">
+									<span class="sep">·</span> 9 hours ago
+								</div>
+							</div>
+							<div class="look-photo">
+								<a href="#" target="_blank">
+									<img src="img/look.jpg" class="img-responsive" alt="" />
+								</a>
+							</div>
+							<div class="look-actions">
+								<div class="hype">
+									<button class="btn btn-default bw-btn hype-btn">HYPE</button>
+									<div class="hype-count">190</div>
+								</div>
+								<div class="save">
+									<button class="btn btn-default">Save</button>
+								</div>
+								<ul>
+									<li>
+										<a href=""><span class="glyphicon glyphicon-refresh"></span></a>
+									</li>
+									<li>
+										<a href=""><span class="glyphicon glyphicon-refresh"></span></a>
+									</li>
+									<li>
+										<a href=""><span class="glyphicon glyphicon-refresh"></span></a>
+									</li>
+									<li>
+										<a href=""><span class="glyphicon glyphicon-refresh"></span></a>
+									</li>
+									<li>
+										<a href=""><span class="glyphicon glyphicon-refresh"></span></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="look">
+							<div class="user-meta">
+								<div class="user">
+									<div class="avatar">
+
+									</div>
+									<div class="info">
+										<a href="#"><img src="img/touxiang.jpg" class="img-circle img-responsive" /></a>
+									</div>
+								</div>
+							</div>
+							<div class="look-meta">
+								<div class="main-row">
+									<div class="name">
+										<a href="#" target="_blank">Exality B.</a>
+										<button class="btn btn-default bw-btn fan-btn">
+										+Fan
+										</button>
+									</div>
+
+								</div>
+
+								<div class="byline">
+									blogger on masha-sedgwick.com 来自
+								</div>
+							</div>
+							<div class="look-msg">
+								<a href="#">Berlin, Alexanderplatz</a>
+								<div class="look-comment">
+									3 <span class="glyphicon glyphicon-edit"></span>
+								</div>
+								<div class="look-ago">
+									<span class="sep">·</span> 9 hours ago
+								</div>
+							</div>
+							<div class="look-photo">
+								<a href="#" target="_blank">
+									<img src="img/look.jpg" class="img-responsive" alt="" />
+								</a>
+							</div>
+							<div class="look-actions">
+								<div class="hype">
+									<button class="btn btn-default bw-btn hype-btn">HYPE</button>
+									<div class="hype-count">190</div>
+								</div>
+								<div class="save">
+									<button class="btn btn-default">Save</button>
+								</div>
+								<ul>
+									<li>
+										<a href=""><span class="glyphicon glyphicon-refresh"></span></a>
+									</li>
+									<li>
+										<a href=""><span class="glyphicon glyphicon-refresh"></span></a>
+									</li>
+									<li>
+										<a href=""><span class="glyphicon glyphicon-refresh"></span></a>
+									</li>
+									<li>
+										<a href=""><span class="glyphicon glyphicon-refresh"></span></a>
+									</li>
+									<li>
+										<a href=""><span class="glyphicon glyphicon-refresh"></span></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="look">
+							<div class="user-meta">
+								<div class="user">
+									<div class="avatar">
+
+									</div>
+									<div class="info">
+										<a href="#"><img src="img/touxiang.jpg" class="img-circle img-responsive" /></a>
+									</div>
+								</div>
+							</div>
+							<div class="look-meta">
+								<div class="main-row">
+									<div class="name">
+										<a href="#" target="_blank">Exality B.</a>
+										<button class="btn btn-default bw-btn fan-btn">
+										+Fan
+										</button>
+									</div>
+
+								</div>
+
+								<div class="byline">
+									blogger on masha-sedgwick.com 来自
+								</div>
+							</div>
+							<div class="look-msg">
+								<a href="#">Berlin, Alexanderplatz</a>
+								<div class="look-comment">
+									3 <span class="glyphicon glyphicon-edit"></span>
+								</div>
+								<div class="look-ago">
+									<span class="sep">·</span> 9 hours ago
+								</div>
+							</div>
+							<div class="look-photo">
+								<a href="#" target="_blank">
+									<img src="img/look.jpg" class="img-responsive" alt="" />
+								</a>
+							</div>
+							<div class="look-actions">
+								<div class="hype">
+									<button class="btn btn-default bw-btn hype-btn">HYPE</button>
+									<div class="hype-count">190</div>
+								</div>
+								<div class="save">
+									<button class="btn btn-default">Save</button>
+								</div>
+								<ul>
+									<li>
+										<a href=""><span class="glyphicon glyphicon-refresh"></span></a>
+									</li>
+									<li>
+										<a href=""><span class="glyphicon glyphicon-refresh"></span></a>
+									</li>
+									<li>
+										<a href=""><span class="glyphicon glyphicon-refresh"></span></a>
+									</li>
+									<li>
+										<a href=""><span class="glyphicon glyphicon-refresh"></span></a>
+									</li>
+									<li>
+										<a href=""><span class="glyphicon glyphicon-refresh"></span></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-xs-12 main-right">
+						<div class="explore col-xs-12">
+							<h3>
+								<a href="#">发现</a>
+							</h3>
+							<div class="stream-list row">
+								<div class="col-xs-6">
+									<a href="#">
+										<div class="stream">
+											<img src="img/1.png" class="img-responsive" alt="" />
+										</div>
+										<div class="stream-darkness"></div>
+									</a>
+								</div>
+								<div class="col-xs-6">
+									<a href="#">
+										<div class="stream">
+											<img src="img/2.png" class="img-responsive" alt="" />
+										</div>
+										<div class="stream-darkness"></div>
+										<div class="center-name"></div>
+									</a>
+								</div>
+							</div>
+							<div class="stream-list row">
+								<div class="col-xs-6">
+									<a href="#">
+										<div class="stream">
+											<img src="img/3.png" class="img-responsive" />
+										</div>
+										<div class="stream-darkness"></div>
+										<div class="center-name"></div>
+									</a>
+								</div>
+								<div class="col-xs-6">
+									<a href="#">
+										<div class="stream">
+											<img src="img/4.png" class="img-responsive" alt="" />
+										</div>
+										<div class="stream-darkness"></div>
+										<div class="center-name"></div>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="blog col-xs-12">
+							<h3>
+								<a href="#">热门文章</a>
+							</h3>
+							<div class="blog-list col-sm-12">
+								<a href="#">
+									<img src="img/1153_DSC09936.jpg" class="img-responsive" alt="" />
+									<h4 class="blog-title">Look Book My Blog</h4>
+								</a>
+							</div>
+							<div class="blog-list col-sm-12">
+								<a href="#">
+									<img src="img/1153_DSC09936.jpg" class="img-responsive" alt="" />
+									<h4 class="blog-title">Look Book My Blog</h4>
+								</a>
+							</div>
+							<div class="blog-list col-sm-12">
+								<a href="#">
+									<img src="img/1153_DSC09936.jpg" class="img-responsive" alt="" />
+									<h4 class="blog-title">Look Book My Blog</h4>
+								</a>
+							</div>
+							<div class="blog-list col-sm-12">
+								<a href="#">
+									<img src="img/1153_DSC09936.jpg" class="img-responsive" alt="" />
+									<h4 class="blog-title">Look Book My Blog</h4>
+								</a>
+							</div>
+							<div class="blog-list col-sm-12">
+								<a href="#">
+									<img src="img/1153_DSC09936.jpg" class="img-responsive" alt="" />
+									<h4 class="blog-title">Look Book My Blog</h4>
+								</a>
+							</div>
+						</div>
+						<div class="col-xs-12 main-user">
+							<h3>
+								<a href="#">热门用户</a>
+							</h3>
+							<div class="spotlight-user col-md-12 col-xs-6">
+								<div class="user-meta">
+									<a href=""> <img src="img/touxiang.jpg" class="img-circle img-responsive" alt="" /> </a>
+								</div>
+								<div class="look-meta">
+									<div class="main-row">
+										<div class="name">
+											<a href="">Exality B.</a>
+										</div>
+										<div class="byline">
+											fashionbyjudi from wroclaw
+										</div>
+										<button class="btn btn-sm fan-btn bw-btn">
+											+Fan
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="spotlight-user col-md-12 col-xs-6">
+								<div class="user-meta">
+									<a href=""> <img src="img/touxiang.jpg" class="img-circle img-responsive" alt="" /> </a>
+								</div>
+								<div class="look-meta">
+									<div class="main-row">
+										<div class="name">
+											<a href="">Exality B.</a>
+										</div>
+										<div class="byline">
+											fashionbyjudi from wroclaw
+										</div>
+										<button class="btn btn-sm fan-btn bw-btn">
+											+Fan
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="spotlight-user col-md-12 col-xs-6">
+								<div class="user-meta">
+									<a href=""> <img src="img/touxiang.jpg" class="img-circle img-responsive" alt="" /> </a>
+								</div>
+								<div class="look-meta">
+									<div class="main-row">
+										<div class="name">
+											<a href="">Exality B.</a>
+										</div>
+										<div class="byline">
+											fashionbyjudi from wroclaw
+										</div>
+										<button class="btn btn-sm fan-btn bw-btn">
+											+Fan
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="spotlight-user col-md-12 col-xs-6">
+								<div class="user-meta">
+									<a href=""> <img src="img/touxiang.jpg" class="img-circle img-responsive" alt="" /> </a>
+								</div>
+								<div class="look-meta">
+									<div class="main-row">
+										<div class="name">
+											<a href="">Exality B.</a>
+										</div>
+										<div class="byline">
+											fashionbyjudi from wroclaw
+										</div>
+										<button class="btn btn-sm fan-btn bw-btn">
+											+Fan
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="style col-xs-12">
+							<h3>
+								<a href="">风格</a>
+							</h3>
+							<div class="col-md-12 col-xs-6">
+								<ul class="style-ul">
+									<li>
+										<a href="">STREET</a>
+									</li>
+									<li>
+										<a href="">CASUAL</a>
+									</li>
+									<li>
+										<a href="">CASUAL</a>
+									</li>
+									<li>
+										<a href="">CASUAL</a>
+									</li>
+									<li>
+										<a href="">CASUAL</a>
+									</li>
+									<li>
+										<a href="">CASUAL</a>
+									</li>
+									<li>
+										<a href="">CASUAL</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-12 col-xs-6">
+								<ul class="style-ul">
+									<li>
+										<a href="">STREET</a>
+									</li>
+									<li>
+										<a href="">CASUAL</a>
+									</li>
+									<li>
+										<a href="">CASUAL</a>
+									</li>
+									<li>
+										<a href="">CASUAL</a>
+									</li>
+									<li>
+										<a href="">CASUAL</a>
+									</li>
+									<li>
+										<a href="">CASUAL</a>
+									</li>
+									<li>
+										<a href="">CASUAL</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="range col-xs-12">
+							<h3>
+								<a href="">种类</a>
+							</h3>
+							<div class="col-md-12 col-xs-6">
+								<ul class="range-ul">
+									<li>
+										<a href="">BLAZERS</a>
+									</li>
+									<li>
+										<a href="">BLAZERS</a>
+									</li>
+									<li>
+										<a href="">BLAZERS</a>
+									</li>
+									<li>
+										<a href="">BLAZERS</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-12 col-xs-6">
+								<ul class="range-ul">
+									<li>
+										<a href="">BLAZERS</a>
+									</li>
+									<li>
+										<a href="">BLAZERS</a>
+									</li>
+									<li>
+										<a href="">BLAZERS</a>
+									</li>
+									<li>
+										<a href="">BLAZERS</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+
+</html>
