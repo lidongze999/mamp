@@ -5,16 +5,6 @@ if(!isset($_POST['submit'])){
 $username = $_POST['username'];
 $password = $_POST['password'];
 $email = $_POST['email'];
-//注册信息判断
-if(!preg_match('/^[\w\x80-\xff]{3,15}$/', $username)){
-    exit('错误：用户名不符合规定。<a href="javascript:history.back(-1);">返回</a>');
-}
-if(strlen($password) < 6){
-    exit('错误：密码长度不符合规定。<a href="javascript:history.back(-1);">返回</a>');
-}
-if(!preg_match('/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/', $email)){
-    exit('错误：电子邮箱格式错误。<a href="javascript:history.back(-1);">返回</a>');
-}
 //包含数据库连接文件
 include('conn.php');
 //检测用户名是否已经存在

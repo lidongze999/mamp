@@ -73,20 +73,17 @@
 										<h2 class="modal-title" id="myModalLabel">登录</h2>
 									</div>
 									<div class="modal-body">
-										<form action="" role="form" method="post">
+										<form action="login.php" role="form" method="post"  name="LoginForm" onSubmit="return InputCheck(this)">
 											<div class="form-group">
-												<label for="exampleInputEmail1">邮箱：</label>
-												<input type="email" class="form-control" placeholder="请输入您的邮箱" />
+												<label for="exampleInputEmail1">用户名：</label>
+												<input type="text" id="username" name="username" class="form-control input" placeholder="请输入您的用户名" />
 											</div>
 											<div class="form-group">
 												<label for="exampleInpuPassword1">密码：</label>
-												<input type="password" class="form-control" placeholder="请输入您的密码" />
+												<input type="password" id="password" name="password" class="form-control input" placeholder="请输入您的密码" />
 											</div>
+											<input type="submit" name="submit" value="  确 定  "  />
 										</form>
-									</div>
-									<div class="modal-footer">
-										<button type="submit" class="btn btn-default" data-dismiss="modal">登录</button>
-										<button type="submit" class="btn btn-primary">注册</button>
 									</div>
 								</div>
 							</div>
@@ -102,13 +99,12 @@
 										<form action="reg.php" role="form" method="post" onSubmit="return InputCheck(this)">
 											<div class="form-group">
 												<label for="exampleInputEmalil2">用户名：</label>
-												<input type="text" id="username" name="username" class="form-control input" placeholder="请输入您的用户名" />
-												<span>(必填，3-15字符长度，支持汉字、字母、数字及_)</span>
+												<input type="text" id="username" name="username" class="form-control input" placeholder="3-15字符长度，支持汉字、字母、数字及_" />
+												<span id="username-span"></span>
 											</div>
 											<div class="form-group">
 												<label for="exampleInputPassword2">密码：</label>
-												<input type="password" id="password" name="password" class="form-control input" placeholder="6~16个字符，区分大小写" />
-												<span>(必填，不得少于6位)</span>
+												<input type="password" id="password" name="password" class="form-control input" placeholder="6-20个字母、数字、下划线" />
 											</div>
 											<div class="form-group">
 												<label for="exampleInputPassword3">确认密码：</label>
