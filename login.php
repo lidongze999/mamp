@@ -1,3 +1,4 @@
+//
 <?php
 //登录
 if(!isset($_POST['submit'])){
@@ -14,10 +15,14 @@ if($result = mysql_fetch_array($check_query)){
     //登录成功
     $_SESSION['username'] = $username;
     $_SESSION['userid'] = $result['uid'];
-    echo '登录成功，欢迎您!';
+    $url='首页.html';
+	echo "登录成功,浏览器将自动跳转到首页<meta http-equiv=\"refresh\" content=\"2;url=$url\">"; 
+	echo $username;
+		
     exit;
 } else {
 	echo mysql_error();
     exit('登录失败！点击此处 <a href="javascript:history.back(-1);">返回</a> 重试');
 }
 ?>
+	
